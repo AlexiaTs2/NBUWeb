@@ -6,7 +6,6 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Lora', serif;
-    
 }
 
 .custom-navbar {
@@ -54,10 +53,9 @@ body {
     text-decoration: none;
 }
 
-
 #section1 {
     position: relative;
-    height: 100vh;
+    height: 110vh;
     width: 100%;
     overflow: hidden;
 }
@@ -88,6 +86,37 @@ body {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
     z-index: 0;
+}
+
+.hero-diagonal {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 70%;
+    background: linear-gradient(to left top, rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.85));
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+    padding: 2rem;
+}
+
+.hero-text {
+    max-width: 500px;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.hero-text p {
+    font-size: 1.1rem;
+    line-height: 1.6;
 }
 
 #section2,
