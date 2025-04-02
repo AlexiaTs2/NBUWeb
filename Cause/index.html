@@ -10,9 +10,19 @@
     <title>Ride and Help</title>
 </head>
 <body>
-    <!-- Bootstrap Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
-        <div class="container">
+        <div class="container d-flex justify-content-between align-items-center">
+            <!-- Лого (по желание може да го махнеш от тук) -->
+            <a class="navbar-brand d-lg-none logo-text" href="#section1">Ride & Help</a>
+    
+            <!-- Toggler бутона вдясно -->
+            <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav" aria-controls="navbarNav"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <!-- Менюто -->
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav d-flex align-items-center">
                     <!-- Left side links -->
@@ -21,12 +31,12 @@
                     <li class="nav-item"><a class="nav-link" href="#section3">Мисии</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section4">Академия</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section5">Доброволци</a></li>
-
+    
                     <!-- Center logo text -->
                     <li class="nav-item mx-3">
                         <a class="nav-link logo-text" href="#section1">Ride & Help</a>
                     </li>
-
+    
                     <!-- Right side links -->
                     <li class="nav-item"><a class="nav-link" href="#section6">Магазин</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section7">Партньори</a></li>
@@ -35,13 +45,9 @@
                     <li class="nav-item"><a class="nav-link" href="#section10">Влез</a></li>
                 </ul>
             </div>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
         </div>
     </nav>
+    
 
     <main>
         <section id="section1">
@@ -51,7 +57,7 @@
                 </video>
                 <div class="overlay"></div> 
         
-                <!-- Диагонален overlay с текст -->
+                <!-- Диагонален overlay с текст
                 <div class="hero-diagonal d-flex justify-content-end align-items-center px-4 px-md-5">
                     <div class="hero-text text-white text-end">
                       <h1 class="fw-bold mb-3 hero-title">
@@ -63,6 +69,16 @@
                       <a href="#section2" class="btn btn-warning btn-sm fw-semibold rounded-1 px-4 py-2 text-nowrap hero-button">
                         Присъедини се
                       </a>
+                    </div>
+                  </div>
+                   -->
+                   <div class="hero-center">
+                    <h1>Превръщаме всяко пътуване в кауза</h1>
+                    <p>Ride & Help обединява мотористи, които даряват време, енергия и сърце за добри дела.</p>
+                    <div class="hero-buttons">
+                        <a href="#section5" class="hero-btn-filled">Стани доброволец</a>
+                      <a href="#section2" class="hero-btn-outline">Научи повече</a>
+                      
                     </div>
                   </div>
                   
