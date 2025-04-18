@@ -203,7 +203,7 @@ body {
     padding: 0;
     position: relative;
     overflow: hidden;
-    height: 80vh; /* Височина на секцията, както си я задала */
+    height: 70vh; /* Височина на секцията, както си я задала */
 }
 
 #section2 .container {
@@ -283,13 +283,13 @@ body {
 }
 
 
-/* Стил за секция 3 */
+/* Стилове за секция 3 */
 #section3 {
-    background-color:#171717;
+    background-color: #171717; /* Тъмен фон за секцията */
     color: white;
     padding: 0;
     position: relative;
-    height: 80vh; /* Увеличаваме височината на секцията */
+    height: 80vh; /* Височина на секцията, както сте задали */
 }
 
 #section3 .container {
@@ -317,7 +317,7 @@ body {
 }
 
 .mission-card {
-    background-color:#1e1e1e;
+    background-color: #292929; /* Тъмно сив фон за картите */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -338,7 +338,7 @@ body {
 .mission-card h4 {
     font-size: 1.8rem;
     font-weight: 600;
-    color: #f97316;
+    color: #f97316; /* Оранжева за заглавията */
 }
 
 .mission-card p {
@@ -347,8 +347,6 @@ body {
 }
 
 
-
-#section3 { background: green; }
 #section4 { background: yellow; }
 #section5 { background: orange; }
 #section6 { background: red; }
