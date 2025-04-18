@@ -55,7 +55,7 @@ body {
 
 #section1 {
     position: relative;
-    height: 110vh;
+    height: 100vh;
     width: 100%;
     overflow: hidden;
 }
@@ -196,20 +196,19 @@ body {
         font-size: 1rem;
     }
 }
-/* Стил за секция 2 */
-#section2 {
+ /* Стил за секция 2 */
+ #section2 {
     background-color: #171717;
     color: white;
     padding: 0;
     position: relative;
-    overflow: hidden;
-    height: 70vh; /* Височина на секцията, както си я задала */
+    height: 80vh; 
 }
 
 #section2 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* Разстояние от ляво и дясно */
+    padding: 0 20px; 
 }
 
 #section2 h1 {
@@ -242,7 +241,7 @@ body {
 #section2 .row {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* За да разположим елементите равномерно */
+    justify-content: space-between; 
 }
 
 #section2 img {
@@ -256,7 +255,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 30px; /* Увеличаваме ширината на оранжевата линия */
+    width: 20px;
     height: 100%;
     background-color: #f97316;
     z-index: 1;
@@ -281,7 +280,6 @@ body {
     margin-top: 20px;
     font-weight: 400;
 }
-
 
 /* Стилове за секция 3 */
 #section3 {
