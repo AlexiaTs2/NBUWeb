@@ -196,22 +196,158 @@ body {
         font-size: 1rem;
     }
 }
-
-#section2,
-#section3,
-#section4,
-#section5,
-#section6,
-#section7,
-#section8,
-#section9,
-#section10 {
-    height: 700px;
-    display: inline-block;
-    width: 100%;
+/* Стил за секция 2 */
+#section2 {
+    background-color: #171717;
+    color: white;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
+    height: 80vh; /* Височина на секцията, както си я задала */
 }
 
-#section2 { background: blue; }
+#section2 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px; /* Разстояние от ляво и дясно */
+}
+
+#section2 h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+#section2 p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 300;
+}
+
+#section2 .btn {
+    background-color: #f97316;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+#section2 .btn:hover {
+    background-color: #e35d00;
+}
+
+#section2 .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* За да разположим елементите равномерно */
+}
+
+#section2 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+#section2 .orange-line {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30px; /* Увеличаваме ширината на оранжевата линия */
+    height: 100%;
+    background-color: #f97316;
+    z-index: 1;
+}
+
+#section2 .col-md-6 {
+    padding-right: 40px;
+    padding-left: 40px;
+}
+
+#section2 .col-md-6.text-white {
+    padding-left: 50px;
+}
+
+#section2 .text-white h1 {
+    font-size: 2.8rem;
+    line-height: 1.2;
+}
+
+#section2 .text-white p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-weight: 400;
+}
+
+
+/* Стил за секция 3 */
+#section3 {
+    background-color:#171717;
+    color: white;
+    padding: 0;
+    position: relative;
+    height: 80vh; /* Увеличаваме височината на секцията */
+}
+
+#section3 .container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#section3 h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+#section3 p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 40px;
+    font-weight: 300;
+}
+
+#section3 .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mission-card {
+    background-color:#1e1e1e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.mission-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.mission-icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.mission-card h4 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #f97316;
+}
+
+.mission-card p {
+    font-size: 1rem;
+    color: white;
+}
+
+
+
 #section3 { background: green; }
 #section4 { background: yellow; }
 #section5 { background: orange; }
