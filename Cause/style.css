@@ -429,15 +429,37 @@ body {
     transition: transform 0.3s ease;
   }
   .accordion-button:not(.collapsed)::after {
-    color: #f97316;
+    /* color: #f97316 !important; */
     transform: rotate(180deg);}
+   
   .text-orange {
     color: #f97316;
   }
-  
-#section9 { background: grey; }
-#section10 { background: cyan; }
-
+  /* Section 9*/
+  .btn-orange {
+    background-color: #f97316;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-orange:hover {
+    background-color: #e35b0b;
+    transform: scale(1.03);
+  }
+  .form-control {
+    background-color: #292929;
+    border: 1px solid #444;
+    color: #f97316;
+  }
+  .form-control::placeholder {
+    color: #aaa;
+  }
+  .form-label {
+    font-weight: 500;
+  }
+    /* Section 10*/
+    
 h1 {
     margin: 100px;
     text-align: center;
