@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../Cause/Images/Logo1.png">
     <title>Ride and Help</title>
+     <?php include 'RegisterFunction.php'; ?>
     <?php include 'ContactFunction.php'; ?>
     <?php include 'AcademyFunction.php'; ?>
 </head>
@@ -676,22 +677,23 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Затвори"></button>
       </div>
       <div class="modal-body">
-        <form id="loginForm">
-          <div class="mb-3">
-            <label for="username" class="form-label">Потребителско име</label>
-            <input type="text" class="form-control bg-dark text-white border-secondary" id="username" required>
-          </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Парола</label>
-            <input type="password" class="form-control bg-dark text-white border-secondary" id="password" required>
-          </div>
-          <div class="mb-3 text-center">
-            <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal" class="text-orange text-decoration-underline">Все още нямаш регистрация?</a>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn bg-orange text-white px-4">Влез</button>
-          </div>
-        </form>
+      <form id="loginForm" method="post" action="index.php">
+  <div class="mb-3">
+    <label for="username" class="form-label">Потребителско име</label>
+    <input type="text" class="form-control bg-dark text-white border-secondary" id="username" name="username" required>
+  </div>
+  <div class="mb-3">
+    <label for="password" class="form-label">Парола</label>
+    <input type="password" class="form-control bg-dark text-white border-secondary" id="password" name="password" required>
+  </div>
+  <div class="mb-3 text-center">
+    <a href="#" data-bs-toggle="modal" data-bs-target="#registerModal" data-bs-dismiss="modal" class="text-orange text-decoration-underline">Все още нямаш регистрация?</a>
+  </div>
+  <div class="text-end">
+    <button type="submit" class="btn bg-orange text-white px-4">Влез</button>
+  </div>
+</form>
+
       </div>
     </div>
   </div>
@@ -708,23 +710,25 @@
         <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Затвори"></button>
       </div>
       <div class="modal-body">
-        <form id="registerForm">
-          <div class="mb-3">
-            <label for="reg-username" class="form-label">Потребителско име</label>
-            <input type="text" class="form-control bg-dark text-white border-secondary" id="reg-username" required>
-          </div>
-          <div class="mb-3">
-            <label for="reg-email" class="form-label">Имейл</label>
-            <input type="email" class="form-control bg-dark text-white border-secondary" id="reg-email" required>
-          </div>
-          <div class="mb-3">
-            <label for="reg-password" class="form-label">Парола</label>
-            <input type="password" class="form-control bg-dark text-white border-secondary" id="reg-password" required>
-          </div>
-          <div class="text-end">
-            <button type="submit" class="btn bg-orange text-white px-4">Регистрирай се</button>
-          </div>
-        </form>
+      <form id="registerForm" method="post" action="index.php">
+  <div class="mb-3">
+    <label for="reg-username" class="form-label">Потребителско име</label>
+    <input type="text" class="form-control bg-dark text-white border-secondary" id="reg-username" name="reg_username" required>
+  </div>
+  <div class="mb-3">
+    <label for="reg-email" class="form-label">Имейл</label>
+    <input type="email" class="form-control bg-dark text-white border-secondary" id="reg-email" name="reg_email" required>
+  </div>
+  <div class="mb-3">
+    <label for="reg-password" class="form-label">Парола</label>
+    <input type="password" class="form-control bg-dark text-white border-secondary" id="reg-password" name="reg_password" required>
+  </div>
+  <div class="text-end">
+    <button type="submit" class="btn bg-orange text-white px-4">Регистрирай се</button>
+  </div>
+</form>
+
+
       </div>
     </div>
   </div>
