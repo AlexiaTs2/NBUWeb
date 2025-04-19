@@ -382,6 +382,7 @@ body {
     position: relative;
     z-index: 1;
   }
+  
   .btn-orange {
     background-color: #f97316;
     color: white;
@@ -389,16 +390,37 @@ body {
     border: none;
     transition: all 0.3s ease;
   }
+  
   .btn-orange:hover {
     background-color: #e35b0b;
     transform: scale(1.03);
   }
+  
   .zoom-on-hover {
     transition: transform 0.4s ease;
+    max-height: 260px;
+    object-fit: contain;
   }
+  
   .zoom-on-hover:hover {
     transform: scale(1.08);
   }
+  
+  .product-card {
+    background-color: #292929;
+    border-radius: 0.75rem;
+    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .product-card img {
+    height: 260px;
+    object-fit: contain;
+  }
+  
   .remove-btn {
     background: transparent;
     border: none;
