@@ -159,43 +159,6 @@ body {
 .hero-btn-filled:hover {
     background-color: #ea580c;
 }
-
-/* 🔽 Responsive стилизация за мобилни и таблети */
-@media (max-width: 768px) {
-    .hero-center {
-        transform: translate(-50%, -60%);
-    }
-
-    .hero-center h1 {
-        font-size: 2.2rem;
-    }
-
-    .hero-center p {
-        font-size: 1.1rem;
-    }
-
-    .hero-btn-outline,
-    .hero-btn-filled {
-        font-size: 1rem;
-        padding: 12px 20px;
-        min-width: 140px;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-        gap: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    .hero-center h1 {
-        font-size: 1.8rem;
-    }
-
-    .hero-center p {
-        font-size: 1rem;
-    }
-}
  /* Стил за секция 2 */
  #section2 {
     background-color: #171717;
