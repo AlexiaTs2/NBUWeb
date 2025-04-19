@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" href="../Cause/Images/Logo1.png">
     <title>Ride and Help</title>
     <?php include 'ContactFunction.php'; ?>
+    <?php include 'AcademyFunction.php'; ?>
 </head>
 <body>
 <body> 
@@ -64,7 +65,7 @@
                     <h1>Превръщаме всяко пътуване в кауза</h1>
                     <p>Ride & Help обединява мотористи, които даряват време, енергия и сърце за добри дела.</p>
                     <div class="hero-buttons">
-                        <a href="#section5" class="hero-btn-filled">Стани доброволец</a>
+                        <a href="#section9" class="hero-btn-filled">Стани доброволец</a>
                       <a href="#section2" class="hero-btn-outline">Научи повече</a>
                       
                     </div>
@@ -176,15 +177,8 @@
   </div>
 
   <!-- Успешно записване Toast -->
-  <div class="position-fixed top-50 start-50 translate-middle" style="z-index: 1100; display: none;" id="academyToastWrapper">
-    <div class="toast show text-center p-4 shadow-lg border-0 rounded-4 animate__animated animate__fadeInDown" role="alert" aria-live="assertive" aria-atomic="true" style="min-width: 320px; background-color: #f97316;">
-      <div class="d-flex flex-column justify-content-center align-items-center">
-        <div class="toast-body text-white fw-bold fs-4">
-          Успешно записване!
-        </div>
-        <button type="button" class="btn btn-light mt-3 px-4 rounded-pill" id="closeAcademyToast">Затвори</button>
-      </div>
-    </div>
+  <div id="academySuccessToast" class="position-fixed top-50 start-50 translate-middle p-4 bg-orange text-white rounded-4 shadow-lg text-center fw-bold animate__animated animate__fadeInDown" style="display:none; z-index: 9999;">
+    Успешно се записа в Академията! 🏍️
   </div>
 
   <!-- Модал с форма -->
@@ -196,23 +190,23 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          <form id="academyForm">
+          <form id="academyForm" method="post" action="AcademyFunction.php">
             <div class="row g-3">
               <div class="col-md-6">
                 <label for="name" class="form-label">Име <span class="text-orange">*</span></label>
-                <input type="text" class="form-control" id="name" required>
+                <input type="text" class="form-control" id="name" name="name" required>
               </div>
               <div class="col-md-6">
                 <label for="email" class="form-label">Имейл <span class="text-orange">*</span></label>
-                <input type="email" class="form-control" id="email" required>
+                <input type="email" class="form-control" id="email" name="email" required>
               </div>
               <div class="col-md-6">
                 <label for="phone" class="form-label">Телефон <span class="text-orange">*</span></label>
-                <input type="tel" class="form-control" id="phone" required>
+                <input type="tel" class="form-control" id="phone" name="phone" required>
               </div>
               <div class="col-md-6">
                 <label for="experience" class="form-label">Ниво на опит <span class="text-orange">*</span></label>
-                <select class="form-select" id="experience" required>
+                <select class="form-select" id="experience" name="experience" required>
                   <option selected disabled value="">Избери...</option>
                   <option>Напълно начинаещ</option>
                   <option>Имам малко опит</option>
@@ -225,30 +219,33 @@
               </div>
             </div>
           </form>
-          <script>
-            document.getElementById("academyForm").addEventListener("submit", function(event) {
-              event.preventDefault();
-              const form = event.target;
-              if (!form.checkValidity()) {
-                form.classList.add("was-validated");
-                return;
-              }
-              form.classList.remove("was-validated");
-              const modalEl = document.getElementById("academyModal");
-              const modal = bootstrap.Modal.getInstance(modalEl);
-              modal.hide();
-              setTimeout(() => {
-                document.getElementById("academyToastWrapper").style.display = "block";
-              }, 300);
-            });
-            document.getElementById("closeAcademyToast").addEventListener("click", function() {
-              document.getElementById("academyToastWrapper").style.display = "none";
-            });
-          </script>
         </div>
       </div>
     </div>
   </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const success = params.get("academy");
+      const error = params.get("error");
+
+      if (success === "1") {
+        const toast = document.getElementById("academySuccessToast");
+        toast.style.display = "block";
+        setTimeout(() => {
+          toast.style.display = "none";
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }, 4000);
+      }
+
+      if (success === "0") {
+        const decodedError = decodeURIComponent(error || "Грешка при записването. Моля, опитайте отново.");
+        alert("Възникна грешка при записването: " + decodedError);
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }
+    });
+  </script>
 </section>
 <!-- СЕКЦИЯ 5: Доброволци -->
 <section id="section5" class="volunteer-section text-white py-5" style="background-color:#171717; font-family: 'Lora', serif;">
