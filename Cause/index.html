@@ -135,9 +135,82 @@
         </div>
     </div>
 </div>
+<section id="section4" class="academy-section text-white">
+    <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-start py-5">
+      <!-- Лява част с бутон -->
+      <div class="left-part mb-5 mb-lg-0" style="max-width: 50%">
+        <h2 class="fw-bold mb-3">Академия Ride & Help</h2>
+        <p class="mb-4">Започни пътя си с нас – от първите стъпки до уверен моторист с мисия. Нашата академия ще ти даде знания, подкрепа и вдъхновение.</p>
+        <button class="btn bg-orange text-white px-4 py-2 fw-semibold" data-bs-toggle="modal" data-bs-target="#academyModal">Запиши се</button>
+      </div>
+  
+      <!-- Дясна част със стъпки -->
+      <div class="right-part position-relative" style="max-width: 45%">
+        <div class="timeline-line position-absolute top-0 start-0" style="width: 3px; height: 100%; background-color: #f97316; left: -20px;"></div>
+  
+        <div class="step mb-5 ps-4">
+          <div class="circle-number bg-orange text-white fw-bold">1</div>
+          <h5 class="fw-bold text-orange mt-2">Основи на безопасността</h5>
+          <p class="text-light">Научи се да предпазваш себе си и другите чрез интензивни тренировки и онлайн уроци.</p>
+        </div>
+  
+        <div class="step mb-5 ps-4">
+          <div class="circle-number bg-orange text-white fw-bold">2</div>
+          <h5 class="fw-bold text-orange mt-2">Свързване с общността</h5>
+          <p class="text-light">Станеш част от мрежа от опитни и начинаещи мотористи. Учи се и вдъхновявай.</p>
+        </div>
+  
+        <div class="step ps-4">
+          <div class="circle-number bg-orange text-white fw-bold">3</div>
+          <h5 class="fw-bold text-orange mt-2">Мисии с кауза</h5>
+          <p class="text-light">Участвай в реални мисии и получи сертификат за завършена академия.</p>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Модал с форма -->
+    <div class="modal fade" id="academyModal" tabindex="-1" aria-labelledby="academyModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content bg-dark text-white">
+          <div class="modal-header border-0">
+            <h5 class="modal-title" id="academyModalLabel">Записване за Академията</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="needs-validation" novalidate>
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="name" class="form-label">Име</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Имейл</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone" class="form-label">Телефон</label>
+                  <input type="tel" class="form-control" id="phone">
+                </div>
+                <div class="col-md-6">
+                  <label for="experience" class="form-label">Ниво на опит</label>
+                  <select class="form-select" id="experience" required>
+                    <option selected disabled value="">Избери...</option>
+                    <option>Напълно начинаещ</option>
+                    <option>Имам малко опит</option>
+                    <option>Карал/а съм активно</option>
+                    <option>Лицензиран моторист</option>
+                  </select>
+                </div>
 
-
-    <div id="section4"><h1>This is Section 4</h1></div>
+              <div class="mt-4 text-end">
+                <button type="submit" class="btn bg-orange text-white px-4 py-2 fw-semibold">Изпрати</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
     <div id="section5"><h1>This is Section 5</h1></div>
     <div id="section6"><h1>This is Section 6</h1></div>
     <div id="section7"><h1>This is Section 7</h1></div>

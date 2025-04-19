@@ -343,9 +343,30 @@ body {
     font-size: 1rem;
     color: white;
 }
+/* Секция 4 */
+.academy-section {
+    background-color: #171717;
+    font-family: 'Lora', serif;
+    position: relative;
+  }
 
+  .text-orange {
+    color: #f97316;
+  }
 
-#section4 { background: yellow; }
+  .bg-orange {
+    background-color: #f97316;
+  }
+
+  .circle-number {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+  }
 #section5 { background: orange; }
 #section6 { background: red; }
 #section7 { background: violet; }
