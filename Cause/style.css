@@ -367,10 +367,74 @@ body {
     justify-content: center;
     font-size: 1rem;
   }
-#section5 { background: orange; }
-#section6 { background: red; }
-#section7 { background: violet; }
-#section8 { background: brown; }
+  /* Секция 5 */
+  .text-orange {
+    color: #f97316;
+  }
+
+  .bg-orange {
+    background-color: #f97316;
+  }
+
+  /* Секция 6 */
+  .shop-section {
+    background-color: #171717;
+    position: relative;
+    z-index: 1;
+  }
+  .btn-orange {
+    background-color: #f97316;
+    color: white;
+    font-weight: 600;
+    border: none;
+    transition: all 0.3s ease;
+  }
+  .btn-orange:hover {
+    background-color: #e35b0b;
+    transform: scale(1.03);
+  }
+  .zoom-on-hover {
+    transition: transform 0.4s ease;
+  }
+  .zoom-on-hover:hover {
+    transform: scale(1.08);
+  }
+  .remove-btn {
+    background: transparent;
+    border: none;
+    color: #f97316;
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+/* Section 7 */
+.partners-section {
+    background-color: #171717;
+    font-family: 'Lora', serif;
+  }
+  
+  .text-orange {
+    color: #f97316;
+  }
+  
+  .grayscale-hover {
+    filter: grayscale(100%);
+    transition: filter 0.3s ease;
+  }
+  
+  .grayscale-hover:hover {
+    filter: grayscale(0%);
+  }
+  /* Section 8 */
+  .accordion-button::after {
+    transition: transform 0.3s ease;
+  }
+  .accordion-button:not(.collapsed)::after {
+    color: #f97316;
+    transform: rotate(180deg);}
+  .text-orange {
+    color: #f97316;
+  }
+  
 #section9 { background: grey; }
 #section10 { background: cyan; }
 

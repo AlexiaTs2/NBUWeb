@@ -211,10 +211,297 @@
       </div>
     </div>
   </section>
-    <div id="section5"><h1>This is Section 5</h1></div>
-    <div id="section6"><h1>This is Section 6</h1></div>
-    <div id="section7"><h1>This is Section 7</h1></div>
-    <div id="section8"><h1>This is Section 8</h1></div>
+  <section id="section5" class="volunteer-section text-white py-5" style="background-color:#171717; font-family: 'Lora', serif;">
+    <div class="container">
+      <div class="text-center mb-5">
+        <h2 class="fw-bold mb-3">Нямаш мотор?<br>Искаш да станеш част от <span class="text-orange">Ride&Help</span></h2>
+        <p class="fst-italic">Всеки може да помогне – с ръце, сърце или просто с дарение. В <span class="text-orange">Ride&Help</span> вярваме, че доброто не изисква нито двигател, нито възраст. Само желание!</p>
+      </div>
+  
+      <div class="row text-center">
+        <div class="col-md-4 mb-4">
+          <div class="p-4 h-100">
+            <div class="bg-orange rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+              <img src="../Cause/Icons/moto-icon.svg" alt="Мисия" width="35">
+            </div>
+            <h5 class="fw-bold text-white">Карай с мисия</h5>
+            <p class="text-light">Помагай докато караш – доставяй храна, подкрепа и усмивки.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <div class="p-4 h-100">
+            <div class="bg-orange rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+              <img src="../Cause/Icons/handshake-icon.svg" alt="Подай ръка" width="35">
+            </div>
+            <h5 class="fw-bold text-white">Подай ръка</h5>
+            <p class="text-light">Включи се в акции за възрастни и самотни хора.</p>
+          </div>
+        </div>
+  
+        <div class="col-md-4 mb-4">
+          <div class="p-4 h-100">
+            <div class="bg-orange rounded-circle d-flex align-items-center justify-content-center mx-auto mb-3" style="width: 70px; height: 70px;">
+              <img src="../Cause/Icons/bag-icon.svg" alt="На терен" width="35">
+            </div>
+            <h5 class="fw-bold text-white">Помагай на терен</h5>
+            <p class="text-light">Носи торби, разтоварвай и подготвяй. Всяка ръка е от значение.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="section6" class="shop-section py-5 text-white">
+    <div class="container text-center">
+      <h2 class="fw-bold display-5 mb-2">Ride&Help Магазин</h2>
+      <p class="fst-italic mb-5">100% от цената на стоките отиват за вашите каузи</p>
+  
+      <div class="row justify-content-center g-4">
+        <!-- Продукт 1 -->
+        <div class="col-md-4">
+          <div class="product-card p-4 position-relative overflow-hidden" style="background-color: #292929; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);">
+            <img src="images/hat.png" alt="Ride&Help Шапка" class="img-fluid mb-3 zoom-on-hover">
+            <h5 class="fw-bold">Лимитирана шапка</h5>
+            <p class="price text-orange fw-semibold fs-5">40 лв</p>
+            <button class="btn btn-orange px-4 py-2 mt-2 w-100" onclick="addToCart('Лимитирана шапка', 40)">Добави в количка</button>
+          </div>
+        </div>
+  
+        <!-- Продукт 2 -->
+        <div class="col-md-4">
+          <div class="product-card p-4 position-relative overflow-hidden" style="background-color: #292929; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);">
+            <img src="images/tshirt.png" alt="Ride&Help Тениска" class="img-fluid mb-3 zoom-on-hover">
+            <h5 class="fw-bold">Лимитирана тениска</h5>
+            <p class="price text-orange fw-semibold fs-5">70 лв</p>
+            <button class="btn btn-orange px-4 py-2 mt-2 w-100" onclick="addToCart('Лимитирана тениска', 70)">Добави в количка</button>
+          </div>
+        </div>
+  
+        <!-- Продукт 3 -->
+        <div class="col-md-4">
+          <div class="product-card p-4 position-relative overflow-hidden" style="background-color: #292929; border-radius: 0.5rem; box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);">
+            <img src="images/mug.png" alt="Ride&Help Чаша" class="img-fluid mb-3 zoom-on-hover">
+            <h5 class="fw-bold">Лимитирана чаша</h5>
+            <p class="price text-orange fw-semibold fs-5">30 лв</p>
+            <button class="btn btn-orange px-4 py-2 mt-2 w-100" onclick="addToCart('Лимитирана чаша', 30)">Добави в количка</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <!-- Pop-up -->
+    <div id="popup" class="position-fixed top-50 start-50 translate-middle bg-dark text-white p-4 rounded shadow-lg animate__animated animate__fadeIn" style="display:none; z-index:1050; width:320px;">
+      <p id="popup-message" class="mb-3 fw-bold"></p>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-light px-3" onclick="closePopup()">Разгледай още</button>
+        <button class="btn btn-orange px-3" onclick="showCart()">Плати</button>
+      </div>
+    </div>
+  
+    <!-- Checkout Modal -->
+    <div id="checkout-modal" class="position-fixed top-50 start-50 translate-middle bg-dark text-white p-4 rounded shadow-lg" style="display:none; z-index:1051; width:400px; max-height:90vh; overflow-y:auto;">
+      <h5 class="fw-bold mb-3">Вашата количка</h5>
+      <ul id="cart-list" class="list-unstyled"></ul>
+      <hr class="text-secondary">
+      <p class="mb-2">Метод за плащане:</p>
+      <select id="payment-method" class="form-select mb-3">
+        <option selected>Revolut</option>
+        <option>Наложен платеж</option>
+      </select>
+      <input type="text" id="address-input" class="form-control mb-3" placeholder="Адрес за доставка">
+      <div class="d-flex justify-content-end">
+        <button class="btn btn-outline-light me-2" onclick="closeCart()">Назад</button>
+        <button class="btn btn-orange" onclick="submitOrder()">Потвърди</button>
+      </div>
+      <p id="confirmation-message" class="text-success fw-semibold mt-3" style="display:none;">Благодарим! Очаквайте да се свържем с вас скоро.</p>
+      <p id="error-message" class="text-danger fw-semibold mt-3" style="display:none;"></p>
+    </div>
+    <script>
+        const cart = [];
+
+        function addToCart(product, price) {
+          cart.push({ name: product, price });
+          document.getElementById('popup-message').innerText = `${product} беше добавен в количката.`;
+          document.getElementById('popup').style.display = 'block';
+        }
+      
+        function closePopup() {
+          document.getElementById('popup').style.display = 'none';
+        }
+      
+        function removeFromCart(index) {
+          cart.splice(index, 1);
+          showCart();
+        }
+      
+        function showCart() {
+          closePopup();
+          const cartList = document.getElementById('cart-list');
+          cartList.innerHTML = '';
+          if (cart.length === 0) {
+            cartList.innerHTML = '<p class="text-muted">Количката е празна.</p>';
+          } else {
+            cart.forEach((item, index) => {
+              const li = document.createElement('li');
+              li.classList.add('d-flex', 'justify-content-between', 'align-items-center', 'mb-2');
+              li.innerHTML = `
+                <span>${item.name} - ${item.price} лв</span>
+                <button class="remove-btn" onclick="removeFromCart(${index})">&times;</button>
+              `;
+              cartList.appendChild(li);
+            });
+          }
+          document.getElementById('confirmation-message').style.display = 'none';
+          document.getElementById('error-message').style.display = 'none';
+          document.getElementById('checkout-modal').style.display = 'block';
+        }
+      
+        function closeCart() {
+          document.getElementById('checkout-modal').style.display = 'none';
+        }
+      
+        function submitOrder() {
+          const address = document.getElementById('address-input').value.trim();
+          const errorMsg = document.getElementById('error-message');
+          const confirmationMsg = document.getElementById('confirmation-message');
+      
+          if (cart.length === 0) {
+            errorMsg.innerText = 'Количката е празна. Добавете поне един продукт.';
+            errorMsg.style.display = 'block';
+            return;
+          }
+      
+          if (!address) {
+            errorMsg.innerText = 'Моля, въведете адрес за доставка.';
+            errorMsg.style.display = 'block';
+            return;
+          }
+      
+          errorMsg.style.display = 'none';
+          confirmationMsg.style.display = 'block';
+          setTimeout(() => {
+            cart.length = 0;
+            closeCart();
+          }, 4000);
+        }
+      </script>
+  </section>
+  <section id="section7" class="partners-section py-5 text-white">
+    <div class="container text-center">
+      <h2 class="fw-bold mb-3">Зад нас стоят хора с кауза</h2>
+      <p class="lead mb-5">
+        <span class="text-orange">Ride&Help</span> не е сам. До нас застават брандове, които избират доброто. 
+        Заедно правим пътя <em>по-светъл</em>!
+      </p>
+  
+      <div class="row justify-content-center align-items-center g-4">
+        <div class="col-6 col-md-3">
+          <img src="images/partner-devin.png" alt="Devin" class="img-fluid grayscale-hover">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/partner-flair.png" alt="Flair" class="img-fluid grayscale-hover">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/partner-bonanza.png" alt="Bonanza Bachorski" class="img-fluid grayscale-hover">
+        </div>
+        <div class="col-6 col-md-3">
+          <img src="images/partner-luda.png" alt="LUDA" class="img-fluid grayscale-hover">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="section8" class="faq-section py-5 text-white" style="background-color: #171717;">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-2 display-5 text-orange">Често задавани въпроси</h2>
+      <p class="text-center mb-5 text-light">Ако не откриеш отговора, който търсиш, можеш <a href="#section9" class="text-orange text-decoration-underline">да се свържеш с нас тук</a> и ще ти отговорим възможно най-бързо.</p>
+  
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="accordion" id="faqAccordion">
+  
+            <div class="accordion-item bg-dark border-0 mb-4 rounded shadow">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false">
+                  Как да се включа като доброволец?
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  За да се включиш, отиди в секцията <a href="#section5" class="text-orange text-decoration-underline">Доброволци</a> и попълни формуляра.
+                </div>
+              </div>
+            </div>
+  
+            <div class="accordion-item bg-dark border-0 mb-4 rounded shadow">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false">
+                  Трябва ли да имам собствен мотор?
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  Не е задължително. Имаме <a href="#section3" class="text-orange text-decoration-underline">мисии</a>, които не изискват притежание на мотор.
+                </div>
+              </div>
+            </div>
+  
+            <div class="accordion-item bg-dark border-0 mb-4 rounded shadow">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false">
+                  Какво е Академията и за кого е?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  Академията е за доброволци. Подробности в секцията <a href="#section4" class="text-orange text-decoration-underline">Академия</a>.
+                </div>
+              </div>
+            </div>
+  
+            <div class="accordion-item bg-dark border-0 mb-4 rounded shadow">
+              <h2 class="accordion-header" id="headingFour">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false">
+                  Какво получавам, ако завърша обучението?
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  Получаваш сертификат, мото жилетка и възможност за участие в специализирани мисии.
+                </div>
+              </div>
+            </div>
+  
+            <div class="accordion-item bg-dark border-0 mb-4 rounded shadow">
+              <h2 class="accordion-header" id="headingFive">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false">
+                  Как мога да даря средства или оборудване?
+                </button>
+              </h2>
+              <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  Използвай <a href="#section9" class="text-orange text-decoration-underline">формата за контакт</a> или посети секцията "Подкрепи ни".
+                </div>
+              </div>
+            </div>
+  
+            <div class="accordion-item bg-dark border-0 rounded shadow">
+              <h2 class="accordion-header" id="headingSix">
+                <button class="accordion-button collapsed bg-dark text-white fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false">
+                  Какви са мисиите и как мога да участвам?
+                </button>
+              </h2>
+              <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-light">
+                  Разгледай секцията <a href="#section3" class="text-orange text-decoration-underline">Мисии</a>, където ще откриеш всички текущи инициативи.
+                </div>
+              </div>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
     <div id="section9"><h1>This is Section 9</h1></div>
     <div id="section10"><h1>This is Section 10</h1></div>
 
