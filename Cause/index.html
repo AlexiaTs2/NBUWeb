@@ -1,10 +1,10 @@
-<!DOCTYPE html>
 <html lang="bg">
 <head>
+    <!-- Метаданни и външни стилове -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" ... >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap">
     <link rel="stylesheet" href="style.css">
@@ -12,6 +12,8 @@
     <title>Ride and Help</title>
 </head>
 <body>
+<body> 
+  <!-- НАВИГАЦИЯ -->
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
         <div class="container d-flex justify-content-between align-items-center">
             <!-- Лого -->
@@ -44,13 +46,14 @@
                     <li class="nav-item"><a class="nav-link" href="#section7">Партньори</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section8">Въпроси</a></li>
                     <li class="nav-item"><a class="nav-link" href="#section9">Контакти</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Влез</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#section10">Влез</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     
     <main>
+       <!-- HERO СЕКЦИЯ (Начало) -->
         <section id="section1">
             <div class="main">
                 <video autoplay loop muted id="video" playsinline>
@@ -70,6 +73,7 @@
             </div>
         </section>
     </main>
+    <!-- СЕКЦИЯ 2: За нас -->
     <div id="section2" class="py-5">
         <div class="container">
             <div class="row align-items-center">
@@ -95,7 +99,7 @@
             </div>
         </div>
     </div>
-<!-- Секция Мисии -->
+ <!-- СЕКЦИЯ 3: Мисии -->
 <div id="section3" class="py-5">
   <div class="container">
       <h1 class="text-center text-white mb-4">Нашите мисии</h1>
@@ -136,6 +140,7 @@
       </div>
   </div>
 </div>
+<!-- СЕКЦИЯ 4: Академия -->
 <section id="section4" class="academy-section text-white">
   <div class="container d-flex flex-column flex-lg-row justify-content-between align-items-start py-5">
     <!-- Лява част с бутон -->
@@ -245,7 +250,7 @@
     </div>
   </div>
 </section>
-
+<!-- СЕКЦИЯ 5: Доброволци -->
 <section id="section5" class="volunteer-section text-white py-5" style="background-color:#171717; font-family: 'Lora', serif;">
   <div class="container">
     <div class="text-center mb-5">
@@ -286,7 +291,7 @@
     </div>
   </div>
 </section>
-
+<!-- СЕКЦИЯ 6: Магазин -->
 <section id="section6" class="shop-section py-5 text-white">
   <div class="container text-center">
     <h2 class="fw-bold display-5 mb-2">Ride&Help Магазин</h2>
@@ -427,6 +432,7 @@
         }
       </script>
   </section>
+   <!-- СЕКЦИЯ 7: Партньори -->
   <section id="section7" class="partners-section py-5 text-white">
     <div class="container text-center">
       <h2 class="fw-bold mb-3">Зад нас стоят хора с кауза</h2>
@@ -451,6 +457,7 @@
       </div>
     </div>
   </section>
+   <!-- СЕКЦИЯ 8: Често задавани въпроси -->
   <section id="section8" class="faq-section py-5 text-white" style="background-color: #171717;">
     <div class="container">
       <h2 class="fw-bold text-center mb-2 display-5 ">Често задавани въпроси</h2>
@@ -543,6 +550,7 @@
       </div>
     </div>
 </section>
+<!-- СЕКЦИЯ 9: Контакти -->
 <section id="section9" class="contact-section py-5 text-white" style="background-color: #171717;">
   <div class="container">
     <h2 class="fw-bold text-center mb-4 display-5 text-light">Свържи се с нас</h2>
@@ -589,6 +597,7 @@
     });
   </script>
 </section>
+ <!-- СЕКЦИЯ 10: Footer -->
 <section id="section10" class="footer-section text-white py-5" style="background-color: #111; position: relative;">
   <div class="container">
     <div class="row text-center text-md-start mb-5">
@@ -642,8 +651,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-wP+aB3nG4UMKAVcH63eMBq+jsH4+tVrXgUSzM/kZ+l3HHxHqtdHwRQ8RkZIf4Q9hH4w23LC8VreDWojd6nIB2w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </section>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- МОДАЛИ ЗА ВХОД И РЕГИСТРАЦИЯ -->
     <!-- Login Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -759,7 +767,8 @@
     });
   });
 </script>
-
+ <!-- СКРИПТОВЕ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>
