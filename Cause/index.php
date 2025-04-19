@@ -1,5 +1,4 @@
-<html lang="bg">
-<head>
+<!DOCTYPE html>
     <!-- Метаданни и външни стилове -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +9,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../Cause/Images/Logo1.png">
     <title>Ride and Help</title>
+    <?php include 'ContactFunction.php'; ?>
 </head>
 <body>
 <body> 
@@ -556,47 +556,63 @@
     <h2 class="fw-bold text-center mb-4 display-5 text-light">Свържи се с нас</h2>
     <p class="text-center text-orange mb-5">Ако имаш въпрос, идея или просто искаш да се включиш – пиши ни!</p>
 
-    <div class="row justify-content-center">
-      <div class="col-md-8">
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Име</label>
-            <input type="text" class="form-control text-orange" id="name" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="email" class="form-label">Имейл</label>
-            <input type="email" class="form-control text-orange" id="email" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="phone" class="form-label">Телефон</label>
-            <input type="tel" class="form-control text-orange" id="phone" required>
-          </div>
-
-          <div class="mb-3">
-            <label for="message" class="form-label">Съобщение</label>
-            <textarea class="form-control text-orange" id="message" rows="5" style="resize: none;" required></textarea>
-          </div>
-
-          <div class="text-end">
-            <button type="submit" class="btn btn-orange px-4 py-2">Изпрати</button>
-          </div>
-
-          <div class="mt-3 text-center" id="submitStatus" style="display:none;">
-            <strong style="color: #f97316;">Съобщението е изпратено успешно!</strong>
-          </div>
-        </form>
+    <form method="post" action="ContactFunction.php" class="p-4 rounded shadow mx-auto" style="background-color: #1f1f1f; max-width: 600px;">
+      <div class="mb-4">
+        <label for="name" class="form-label fw-semibold">Име</label>
+        <input type="text" class="form-control bg-dark border-0 text-orange shadow-sm" id="name" name="name" required>
       </div>
+    
+      <div class="mb-4">
+        <label for="email" class="form-label fw-semibold">Имейл</label>
+        <input type="email" class="form-control bg-dark border-0 text-orange shadow-sm" id="email" name="email" required>
+      </div>
+    
+      <div class="mb-4">
+        <label for="phone" class="form-label fw-semibold">Телефон</label>
+        <input type="tel" class="form-control bg-dark border-0 text-orange shadow-sm" id="phone" name="phone" required>
+      </div>
+    
+      <div class="mb-4">
+        <label for="message" class="form-label fw-semibold">Съобщение</label>
+        <textarea class="form-control bg-dark border-0 text-orange shadow-sm" id="message" name="message" rows="5" style="resize: none;" required></textarea>
+      </div>
+    
+      <div class="text-center">
+        <button type="submit" class="btn btn-orange px-4 py-2" name="submit">
+          <i class="fas fa-paper-plane me-2"></i> Изпрати
+        </button>
+      </div>
+    </form>
+
+    <!-- Успешно изпратено съобщение -->
+    <div id="successToast" class="position-fixed top-50 start-50 translate-middle p-4 bg-orange text-white rounded-4 shadow-lg text-center fw-bold animate__animated animate__fadeInDown" style="display:none; z-index: 9999;">
+      Съобщението беше изпратено успешно! 🙌
     </div>
+
+    <script>
+  window.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const success = params.get("success");
+
+    if (success === "1") {
+      const toast = document.getElementById("successToast");
+      toast.style.display = "block";
+      setTimeout(() => {
+        toast.style.display = "none";
+        window.history.replaceState({}, document.title, window.location.pathname);
+      }, 4000);
+    }
+
+    if (success === "0") {
+      alert("Възникна грешка при изпращане. Моля, опитайте отново.");
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  });
+</script>
+
   </div>
-  <script>
-    document.querySelector("#section9 form").addEventListener("submit", function(event) {
-      event.preventDefault();
-      document.getElementById("submitStatus").style.display = "block";
-    });
-  </script>
 </section>
+
  <!-- СЕКЦИЯ 10: Footer -->
 <section id="section10" class="footer-section text-white py-5" style="background-color: #111; position: relative;">
   <div class="container">
