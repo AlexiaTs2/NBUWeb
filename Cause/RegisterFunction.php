@@ -2,7 +2,7 @@
 session_start();
 $servername = "127.0.0.1";
 $username = "root";
-$password = "1234";
+$password = "AlexiaTs";
 $database = "rideandhelp";
 
 try {
