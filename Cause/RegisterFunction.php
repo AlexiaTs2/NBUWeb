@@ -12,7 +12,6 @@ try {
     echo "Connection failed: " . $e->getMessage();
     exit();
 }
-
 // LOGIN обработка
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username']) && isset($_POST['password'])) {
     $username = trim($_POST['username']);
