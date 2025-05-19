@@ -1,0 +1,274 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Lora', serif;
+    background-color: #000;
+  }
+
+  /* NAVBAR */
+  .custom-navbar {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.85), rgba(25, 25, 25, 0.85));
+    backdrop-filter: blur(6px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .nav-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .nav-part {
+    display: flex;
+    gap: 18px;
+  }
+
+  .logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+  }
+
+  .nav-link {
+    color: #eee;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.3s ease;
+  }
+
+  .nav-link:hover {
+    color: #00ffff;
+    text-decoration: underline;
+  }
+
+  /* HERO SECTION */
+  #section1 {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    background: url('../Portal/Images/Background.png') no-repeat center center/cover;
+    overflow: hidden;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  .hero-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+    max-width: 90%;
+    animation: fadeInText 2s ease-out forwards;
+  }
+
+  .hero-center h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.4s;
+  }
+
+  .hero-center p {
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    font-style: italic;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    animation: fadeInUp 1.5s ease-out forwards;
+    animation-delay: 0.8s;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Arrow */
+  .arrow-down {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 2rem;
+    color: white;
+    z-index: 2;
+    cursor: pointer;
+    animation: bounce 1.5s infinite;
+    text-decoration: none;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+
+  .arrow-down:hover {
+    transform: translateX(-50%) scale(1.2);
+    color: #00ffff;
+  }
+
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(10px); }
+  }
+
+ /* About Section Styles */
+ .about-section {
+    position: relative;
+    background: url('../Portal/Images/BlackBricks.png') no-repeat center center/cover;
+    padding: 100px 40px;
+    color: white;
+    overflow: hidden;
+  }
+  
+  .about-section .overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+  }
+  
+  .about-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .about-text {
+    flex: 1;
+    min-width: 300px;
+  }
+  
+  .about-text h2 {
+    font-size: 2.5rem;
+    color: #00ffff;
+    margin-bottom: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+  
+  .about-image {
+    flex: 1;
+    min-width: 300px;
+    text-align: center;
+  }
+  
+  .about-image img {
+    max-width: 100%;
+    border-radius: 12px;
+  }
+  
+    /* ГАЛЕРИЯ */
+      .gallery-section {
+        position: relative;
+        background: url('../Portal/Images/BlackBricks.png') no-repeat center center/cover;
+        padding: 100px 20px;
+        overflow: hidden;
+        text-align: center;
+      }
+      
+      .gallery-overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+      }
+      
+      .gallery-title {
+        color: #00ffff;
+        font-size: 3rem;
+        z-index: 2;
+        position: relative;
+        margin-bottom: 50px;
+      }
+      
+      .carousel-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 2;
+      }
+      
+      .carousel {
+        display: flex;
+        transition: transform 0.5s ease;
+        width: 900px;
+        overflow: hidden;
+      }
+      
+      .carousel-img {
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+        margin: 0 10px;
+        border-radius: 8px;
+      }
+      
+      .carousel-btn {
+        background: transparent;
+        border: none;
+        color: white;
+        font-size: 2rem;
+        cursor: pointer;
+        z-index: 3;
+      }
+      
+      .carousel-dots {
+        margin-top: 20px;
+        position: relative;
+        z-index: 2;
+      }
+      
+      .dot {
+        height: 12px;
+        width: 12px;
+        margin: 0 5px;
+        background-color: #ccc;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .dot.active {
+        background-color: #00ffff;
+      }
