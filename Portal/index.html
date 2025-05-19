@@ -1,12 +1,123 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bg">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../Portal/style.css">
-    <title>StreetFrame</title>
+  <meta charset="UTF-8">
+  <title>StreetFrame</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Portal/style.css">
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="custom-navbar">
+    <div class="nav-wrapper">
+      <div class="nav-part">
+        <a href="#about" class="nav-link">За нас</a>
+        <a href="#gallery" class="nav-link">Галерия</a>
+        <a href="#artists" class="nav-link">Артисти</a>
+        <a href="#orders" class="nav-link">Поръчай</a>
+      </div>
+
+      <a href="#" class="logo-text">StreetFrame</a>
+
+      <div class="nav-part">
+        <a href="#suggested" class="nav-link">Предложи</a>
+        <a href="#map" class="nav-link">Карта</a>
+        <a href="#events" class="nav-link">Събития</a>
+        <a href="#contact" class="nav-link">Контакти</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="section1">
+    <div class="overlay"></div>
+    <div class="hero-center">
+      <h1>Добре дошъл в платформата,<br>където улицата говори.</h1>
+      <p>Изкуството тук не спи – то вдъхновява</p>
+    </div>
+    <a href="#about" class="arrow-down" id="scrollArrow">v</a>
+  </section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="overlay"></div>
+    <div class="about-content">
+      <div class="about-text">
+        <h2>За нас</h2>
+        <p>
+          <strong>StreetFrame</strong> е онлайн културен портал, посветен на красотата и<br>
+          разнообразието на изкуството на уличните графити.
+        </p>
+        <p>
+          Ние се стремим да покажем таланта на артисти от различни среди<br>
+          и да вдъхновим ценители на изкуството.
+        </p>
+      </div>
+      <div class="about-image">
+        <img src="../Portal/Images/AboutPic.png" alt="Graffiti Artist Illustration">
+      </div>
+    </div>
+  </section>
+  <section id="gallery" class="gallery-section">
+    <div class="gallery-overlay"></div>
+    <h2 class="gallery-title">Галерия</h2>
+    <div class="carousel-container">
+      <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
+      <div class="carousel">
+        <img src="../Portal/Images/gallery1.png" class="carousel-img" alt="Art 1">
+        <img src="../Portal/Images/gallery2.png" class="carousel-img" alt="Art 2">
+        <img src="../Portal/Images/gallery3.png" class="carousel-img" alt="Art 3">
+        <img src="../Portal/Images/gallery4.png" class="carousel-img" alt="Art 4">
+        <img src="../Portal/Images/gallery5.png" class="carousel-img" alt="Art 5">
+        <img src="../Portal/Images/gallery6.png" class="carousel-img" alt="Art 6">
+        <img src="../Portal/Images/gallery7.png" class="carousel-img" alt="Art 7">
+        <img src="../Portal/Images/gallery8.png" class="carousel-img" alt="Art 8">
+        <img src="../Portal/Images/gallery9.png" class="carousel-img" alt="Art 9">
+      </div>
+      <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+    <div class="carousel-dots">
+      <span class="dot active" onclick="goToSlide(0)"></span>
+      <span class="dot" onclick="goToSlide(1)"></span>
+      <span class="dot" onclick="goToSlide(2)"></span>
+    </div>
+  </section>
+  <script>
+    let currentSlide = 0;
+    function moveSlide(step) {
+      const totalSlides = 3;
+      currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+      updateCarousel();
+    }
     
+    function goToSlide(index) {
+      currentSlide = index;
+      updateCarousel();
+    }
+    
+    function updateCarousel() {
+      const carousel = document.querySelector('.carousel');
+      const offset = currentSlide * 960; // 3 * (300px + margin)
+      carousel.style.transform = `translateX(-${offset}px)`;
+    
+      document.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+    }
+    </script>  
+  <script>
+    document.getElementById("scrollArrow").addEventListener("click", function (e) {
+      e.preventDefault();
+      const aboutSection = document.querySelector("#about");
+      aboutSection.scrollIntoView({ behavior: "smooth" });
+    });
+  
+    window.onload = () => {
+      window.scrollTo(0, 0);
+    };
+  </script>
+  
 </body>
 </html>
