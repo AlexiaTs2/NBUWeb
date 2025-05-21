@@ -196,6 +196,7 @@ body {
   }
   
     /* ГАЛЕРИЯ */
+    
       .gallery-section {
         position: relative;
         background: url('../Portal/Images/BlackBricks.png') no-repeat center center/cover;
@@ -219,7 +220,32 @@ body {
         position: relative;
         margin-bottom: 50px;
       }
-      
+      .carousel-wrapper {
+  width: 960px; /* 3 images x 300px + margins */
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  display: flex;
+  min-width: 960px;
+  justify-content: center;
+}
+
+.carousel-img {
+  width: 300px;
+  height: auto;
+  object-fit: cover;
+  margin: 0 10px;
+  border-radius: 8px;
+}
+
       .carousel-container {
         position: relative;
         display: flex;
@@ -272,3 +298,683 @@ body {
       .dot.active {
         background-color: #00ffff;
       }
+
+      /* Artists */
+    .artists-section {
+  position: relative;
+  background: url('images/BlackBricks.png') no-repeat center center/cover;
+  padding: 100px 40px;
+  text-align: center;
+  color: white;
+}
+
+.artists-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+
+.artists-title {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #00ffff;
+  margin-bottom: 60px;
+}
+.artists-cards {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* увеличаваме разстоянието между картите */
+  flex-wrap: wrap;
+}
+
+.card-front img {
+  width: 120px;
+  height: 120px;
+  border-radius: 16px; /* вместо кръг – модерно заобляне */
+  border: 3px solid #00ffff;
+  box-shadow: 0 4px 12px rgba(0, 255, 255, 0.25);
+  object-fit: cover;
+  margin-bottom: 20px;
+  transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-10px); /* леко повдигане при ховър */
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.artist-card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+.artist-card {
+  width: 280px;
+  height: 420px; /* малко по-висока карта */
+  perspective: 1000px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.artist-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 255, 255, 0.2);
+}
+
+.card-front, .card-back {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 20px;
+  position: absolute;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  border: 2px solid transparent;
+  transition: border-color 0.3s;
+}
+
+.artist-card:hover .card-front {
+  border-color: #00ffff;
+}
+
+.card-front img {
+  width: 100px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.card-front h3 {
+  font-size: 1.3rem;
+  margin: 0 0 10px;
+}
+
+.card-front p {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+  background: #255555;
+}
+
+.card-back img {
+  width: 160px;
+  height: auto;
+}
+
+/* Секция Поръчай Изкуство */
+.order-section {
+  position: relative;
+  background: url('images/BlackBricks.png') no-repeat center center/cover;
+  color: white;
+  padding: 100px 40px;
+  overflow: hidden;
+}
+
+.order-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.order-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.order-form {
+  flex: 1 1 460px;
+  max-width: 480px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.order-form h2 {
+  color: #00ffff;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.subtext {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.order-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  height: 50px;
+  box-sizing: border-box;
+}
+
+/* Специално за textarea – фиксирана височина и без resize */
+.order-form textarea {
+  resize: none;
+  height: 100px;
+  line-height: 1.5;
+}
+
+/* Премахване на стрелките от number полета */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* Премахване на стрелката на select */
+.order-form select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: none;
+}
+
+.file-upload a {
+  color: #00ffff;
+  text-decoration: underline;
+  cursor: pointer;
+  font-weight: 500;
+  display: inline-block;
+}
+
+.file-upload a:hover {
+  text-decoration: none;
+}
+
+.file-upload input[type="file"] {
+  display: none;
+}
+
+.order-form button {
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  margin-top: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.order-form button:hover {
+  background-color: #00cccc;
+}
+
+.order-image {
+  flex: 1 1 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 500px;
+}
+
+.order-image img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 0 40px rgba(0, 255, 255, 0.15);
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 8px rgba(0, 255, 255, 0.5);
+}
+
+/* Ideas */
+.ideas-section {
+  position: relative;
+  background: url('/Portal/Images/BlackBricks.png') no-repeat center center/cover;
+  color: white;
+  padding: 100px 40px;
+  overflow: hidden;
+}
+
+.ideas-section::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.ideas-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.idea-form {
+  flex: 1 1 420px;
+}
+
+.idea-form h2 {
+  color: #00ffff;
+  font-size: 2.4rem;
+  margin-bottom: 10px;
+}
+
+.idea-form p {
+  font-size: 1.1rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+.idea-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.idea-form input,
+.idea-form textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 12px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.idea-form textarea {
+  height: 100px;
+  resize: none;
+}
+.idea-form button {
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 12px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  width: calc(100% - 2px); /* Компенсира граничните разлики */
+  box-sizing: border-box;
+  display: block;
+}
+
+
+.idea-form button:hover {
+  background-color: #00cccc;
+}
+
+.idea-list {
+  flex: 1 1 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.idea-list h3 {
+  margin-bottom: 10px;
+  color: #00ffff;
+  font-size: 1.4rem;
+}
+
+.idea-card {
+  background-color: #121212;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s;
+}
+
+.idea-card .idea-content h4 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.idea-card .location {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.idea-card .desc {
+  font-size: 0.95rem;
+  color: #00ffff;
+}
+
+.vote-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.vote-btn {
+  background: none;
+  border: none;
+  color: #00ffff;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.vote-btn.voted {
+  color: #00cccc;
+}
+
+.vote-count {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Map */
+ .map-section {
+    position: relative;
+    background: url('../Portal/Images/BlackBricks.png') no-repeat center center/cover;
+    padding: 100px 40px;
+    color: white;
+    text-align: center;
+  }
+
+  .map-section h2 {
+    color: #00ffff;
+    font-size: 2.6rem;
+    margin-bottom: 10px;
+  }
+
+  .map-section .subtitle {
+    font-size: 1.2rem;
+    color: #ccc;
+    margin-bottom: 40px;
+  }
+
+  #map {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.1);
+  }
+/* Events */
+  .events-section {
+  position: relative;
+  background: url('images/BlackBricks.png') no-repeat center center/cover;
+  padding: 100px 40px;
+  color: white;
+  text-align: center;
+  overflow: hidden;
+}
+
+.events-section .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.events-section .section-title {
+  font-size: 3rem;
+  color: #00ffff;
+  position: relative;
+  z-index: 2;
+  margin-bottom: 40px;
+}
+
+.events-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.event-card {
+  padding: 20px;
+  border-radius: 12px;
+  color: white;
+  text-align: center;
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  position: relative;
+  z-index: 2;
+}
+
+.event-card button {
+  margin-top: 12px;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.event-card.red { background-color: #e74c3c; }
+.event-card.red button { background-color: #c0392b; }
+
+.event-card.teal { background-color: #16a085; }
+.event-card.teal button { background-color: #117a65; }
+
+.event-card.purple { background-color: #6c5ce7; }
+.event-card.purple button { background-color: #4834d4; }
+
+.event-card.orange { background-color: #f39c12; }
+.event-card.orange button { background-color: #d68910; }
+
+.event-card button:hover {
+  opacity: 0.85;
+}
+
+/* QR POPUP */
+.qr-popup {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.qr-popup.hidden {
+  display: none;
+}
+
+.qr-popup-content {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  text-align: center;
+}
+
+.qr-popup-content img {
+  max-width: 220px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 24px;
+  color: #00ffff;
+  cursor: pointer;
+}
+/* 
+Contact */
+.contact-section {
+  position: relative;
+  background: url('../Portal/Images/BlackBricks.png') no-repeat center center/cover;
+  padding: 100px 20px 60px;
+  text-align: center;
+  color: white;
+  overflow: hidden;
+}
+
+.contact-section .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.contact-title {
+  position: relative;
+  z-index: 2;
+  font-size: 3rem;
+  color: #00ffff;
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  position: relative;
+  z-index: 2;
+  max-width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  padding: 14px 16px;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.contact-form button {
+  background-color: #00ffff;
+  color: black;
+  font-weight: bold;
+  border: none;
+  padding: 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #00cccc;
+}
+
+.socials {
+  position: relative;
+  z-index: 2;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.socials p {
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+
+.socials .icons a {
+  margin: 0 12px;
+  color: white;
+  font-size: 1.8rem;
+  transition: color 0.3s ease;
+}
+
+.socials .icons a:hover {
+  color: #00ffff;
+}
+
+.site-footer {
+  position: relative;
+  background: url('images/BlackBricks.png') no-repeat center center/cover;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 0.95rem;
+  color: white;
+  overflow: hidden;
+}
+
+.footer-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.site-footer p {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  color: white;
+  letter-spacing: 0.4px;
+}

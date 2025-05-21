@@ -5,36 +5,51 @@
   <title>StreetFrame</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-dCuYL7dhbshT5sdd/U0kxEtqbbgq8sZfRJ5zNBFVRaX7RlZ4oH69+0nTUKZz1g1sp0i6X84u1VDEm3TTMrB59w=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
   <link rel="stylesheet" href="../Portal/style.css">
+  <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+/>
+
 </head>
 <body>
 
   <!-- Navbar -->
   <nav class="custom-navbar">
-    <div class="nav-wrapper">
-      <div class="nav-part">
-        <a href="#about" class="nav-link">За нас</a>
-        <a href="#gallery" class="nav-link">Галерия</a>
-        <a href="#artists" class="nav-link">Артисти</a>
-        <a href="#orders" class="nav-link">Поръчай</a>
-      </div>
-
-      <a href="#" class="logo-text">StreetFrame</a>
-
-      <div class="nav-part">
-        <a href="#suggested" class="nav-link">Предложи</a>
-        <a href="#map" class="nav-link">Карта</a>
-        <a href="#events" class="nav-link">Събития</a>
-        <a href="#contact" class="nav-link">Контакти</a>
-      </div>
+  <div class="nav-overlay"></div>
+  <div class="nav-wrapper">
+    <div class="nav-part">
+      <a href="#about" class="nav-link">За нас</a>
+      <a href="#gallery" class="nav-link">Галерия</a>
+      <a href="#artists" class="nav-link">Артисти</a>
+      <a href="#order" class="nav-link">Поръчай</a>
     </div>
-  </nav>
+
+    <a href="#" class="logo-text">StreetFrame</a>
+
+    <div class="nav-part">
+      <a href="#idea" class="nav-link">Предложи</a>
+      <a href="#map" class="nav-link">Карта</a>
+      <a href="#event" class="nav-link">Събития</a>
+      <a href="#contacts" class="nav-link">Контакти</a>
+    </div>
+  </div>
+</nav>
+
 
   <!-- Hero Section -->
   <section id="section1">
     <div class="overlay"></div>
     <div class="hero-center">
-      <h1>Добре дошъли в платформата,<br>където улицата говори.</h1>
+      <h1>Добре дошли в платформата,<br>където улицата говори.</h1>
       <p>Изкуството тук не спи – то вдъхновява</p>
     </div>
     <a href="#about" class="arrow-down" id="scrollArrow">v</a>
@@ -59,54 +74,393 @@
         <img src="../Portal/Images/AboutPic.png" alt="Graffiti Artist Illustration">
       </div>
     </div>
+    
   </section>
+  <!-- Gallery Section -->
   <section id="gallery" class="gallery-section">
-    <div class="gallery-overlay"></div>
-    <h2 class="gallery-title">Галерия</h2>
-    <div class="carousel-container">
-      <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
-      <div class="carousel">
-        <img src="../Portal/Images/gallery1.png" class="carousel-img" alt="Art 1">
-        <img src="../Portal/Images/gallery2.png" class="carousel-img" alt="Art 2">
-        <img src="../Portal/Images/gallery3.png" class="carousel-img" alt="Art 3">
-        <img src="../Portal/Images/gallery4.png" class="carousel-img" alt="Art 4">
-        <img src="../Portal/Images/gallery5.png" class="carousel-img" alt="Art 5">
-        <img src="../Portal/Images/gallery6.png" class="carousel-img" alt="Art 6">
-        <img src="../Portal/Images/gallery7.png" class="carousel-img" alt="Art 7">
-        <img src="../Portal/Images/gallery8.png" class="carousel-img" alt="Art 8">
-        <img src="../Portal/Images/gallery9.png" class="carousel-img" alt="Art 9">
+  <div class="gallery-overlay"></div>
+  <h2 class="gallery-title">Галерия</h2>
+
+  <div class="carousel-container">
+    <button class="carousel-btn left" onclick="moveSlide(-1)">&#10094;</button>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track">
+        <div class="carousel-slide">
+          <img src="../Portal/Images/Butterfly.png" alt="Art 1" class="carousel-img">
+          <img src="../Portal/Images/Car.png" alt="Art 2" class="carousel-img">
+          <img src="../Portal/Images/Cat.png" alt="Art 3" class="carousel-img">
+        </div>
+        <div class="carousel-slide">
+          <img src="../Portal/Images/Woman.png" alt="Art 4" class="carousel-img">
+          <img src="../Portal/Images/Parrot.png" alt="Art 5" class="carousel-img">
+          <img src="../Portal/Images/Man.png" alt="Art 6" class="carousel-img">
+        </div>
+        <div class="carousel-slide">
+          <img src="../Portal/Images/Flower.png" alt="Art 7" class="carousel-img">
+          <img src="../Portal/Images/Fox.png" alt="Art 8" class="carousel-img">
+          <img src="../Portal/Images/Wall.png" alt="Art 9" class="carousel-img">
+        </div>
       </div>
-      <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
     </div>
-    <div class="carousel-dots">
-      <span class="dot active" onclick="goToSlide(0)"></span>
-      <span class="dot" onclick="goToSlide(1)"></span>
-      <span class="dot" onclick="goToSlide(2)"></span>
+
+    <button class="carousel-btn right" onclick="moveSlide(1)">&#10095;</button>
+  </div>
+
+  <div class="carousel-dots">
+    <span class="dot active" onclick="goToSlide(0)"></span>
+    <span class="dot" onclick="goToSlide(1)"></span>
+    <span class="dot" onclick="goToSlide(2)"></span>
+  </div>
+</section>
+ <!-- Artists Section -->
+<section id="artists" class="artists-section">
+  <div class="artists-overlay"></div>
+  <h2 class="artists-title">Артисти</h2>
+  <div class="artists-cards">
+    <div class="artist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../Portal/Images/Artist1.png" alt="Алекс Смит">
+          <h3>Алекс Смит</h3>
+          <p>Уличен артист,<br>известен с детайлни стенописи и социален заряд.</p>
+        </div>
+        <div class="card-back">
+          <img src="../Portal/Images/QR.png" alt="QR code">
+        </div>
+      </div>
     </div>
-  </section>
-  <script>
-    let currentSlide = 0;
-    function moveSlide(step) {
-      const totalSlides = 3;
-      currentSlide = (currentSlide + step + totalSlides) % totalSlides;
-      updateCarousel();
-    }
-    
-    function goToSlide(index) {
-      currentSlide = index;
-      updateCarousel();
-    }
-    
-    function updateCarousel() {
-      const carousel = document.querySelector('.carousel');
-      const offset = currentSlide * 960; // 3 * (300px + margin)
-      carousel.style.transform = `translateX(-${offset}px)`;
-    
-      document.querySelectorAll('.dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-      });
-    }
-    </script>  
+    <div class="artist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../Portal/Images/Artist2.png" alt="Мария Джонсън">
+          <h3>Мария Джонсън</h3>
+          <p>Абстрактни форми и цветове,<br>вдъхновяващи улицата да мечтае.</p>
+        </div>
+        <div class="card-back">
+          <img src="../Portal/Images/QR.png" alt="QR code">
+        </div>
+      </div>
+    </div>
+    <div class="artist-card">
+      <div class="card-inner">
+        <div class="card-front">
+          <img src="../Portal/Images/Artist1.png" alt="Дейвид Ли">
+          <h3>Дейвид Ли</h3>
+          <p>Майстор на графити<br>с емоционални и дълбоки произведения.</p>
+        </div>
+        <div class="card-back">
+          <img src="../Portal/Images/QR.png" alt="QR code">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+ <!-- Order Section -->
+
+<!-- Поръчай изкуство -->
+<section id="order" class="order-section">
+  <div class="order-container">
+    <div class="order-form">
+      <h2>Поръчай изкуство</h2>
+      <p class="subtext">Изкуството започва с идея. Сподели я с нас!</p>
+      <form>
+        <select name="type">
+          <option disabled selected>Какъв тип проект търсиш?</option>
+          <option>Стенопис</option>
+          <option>Графити надпис</option>
+          <option>Илюстрация</option>
+        </select>
+        <input type="text" placeholder="Име">
+        <input type="email" placeholder="Имейл">
+        <input type="tel" placeholder="Телефон">
+        <input type="text" placeholder="Локация (град или адрес)">
+        <textarea placeholder="Опиши идеята си"></textarea>
+
+        <label class="file-upload">
+          <a href="#">+ Прикачи файл (референция, скица, снимка...)</a>
+          <input type="file" hidden>
+        </label>
+
+        <button type="submit">Изпрати заявка</button>
+      </form>
+    </div>
+    <div class="order-image">
+      <img src="../Portal/Images/Graffit.png" alt="Графит">
+    </div>
+  </div>
+</section>
+<!-- Ideas Section -->
+
+<section class="ideas-section">
+  <div class="ideas-container">
+    <div class="idea-form">
+      <h2>Предложи идея</h2>
+      <p>Къде и какво да изрисуваме? Сподели ни визията си.</p>
+      <form>
+        <input type="text" placeholder="Заглавие">
+        <input type="text" placeholder="Местоположение">
+        <textarea placeholder="Описание"></textarea>
+        <button type="submit">Изпрати</button>
+      </form>
+    </div>
+
+    <div class="idea-list">
+      <h3>Категория идеи</h3>
+
+      <div class="idea-card" data-voted="false">
+        <div class="idea-content">
+          <h4>Цветна абстракция</h4>
+          <p class="location">ул. Иван Вазов, София</p>
+          <p class="desc">Динозинеи, ярък зизан, за добави свят към квартала.</p>
+        </div>
+        <div class="vote-box">
+          <button class="vote-btn">↑</button>
+          <span class="vote-count">5</span>
+        </div>
+      </div>
+   <div class="idea-card" data-voted="false">
+        <div class="idea-content">
+          <h4>Цветна абстракция</h4>
+          <p class="location">ул. Иван Вазов, София</p>
+          <p class="desc">Динозинеи, ярък зизан, за добави свят към квартала.</p>
+        </div>
+        <div class="vote-box">
+          <button class="vote-btn">↑</button>
+          <span class="vote-count">12</span>
+        </div>
+      </div>
+   <div class="idea-card" data-voted="false">
+        <div class="idea-content">
+          <h4>Цветна абстракция</h4>
+          <p class="location">ул. Иван Вазов, София</p>
+          <p class="desc">Динозинеи, ярък зизан, за добави свят към квартала.</p>
+        </div>
+        <div class="vote-box">
+          <button class="vote-btn">↑</button>
+          <span class="vote-count">0</span>
+        </div>
+      </div>
+
+      
+
+    </div>
+  </div>
+</section>
+
+<!-- Секция: Къде можеш да рисуваш -->
+<section class="map-section">
+  <h2>Къде можеш да рисуваш?</h2>
+  <p class="subtitle">Разгледай легалните локации за улично изкуство в София</p>
+  <div id="map"></div>
+</section>
+ <!-- Events -->
+<section class="events-section">
+  <div class="overlay"></div>
+
+  <h2 class="section-title">Събития</h2>
+
+  <div class="events-container">
+    <div class="event-card red">
+      <p class="date">15.06.2024</p>
+      <h3>Лятна фреска</h3>
+      <p class="location">Централен пазар</p>
+      <p class="time">11:00</p>
+      <button onclick="openPopup('../Portal/Images/QR.png')">Виж повече</button>
+    </div>
+
+    <div class="event-card teal">
+      <p class="date">27.06.2024</p>
+      <h3>Графити тура</h3>
+      <p class="location">Квартал Лозенец</p>
+      <p class="time">14:30</p>
+      <button onclick="openPopup('../Portal/Images/QR.png')">Виж повече</button>
+    </div>
+
+    <div class="event-card purple">
+      <p class="date">03.07.2024</p>
+      <h3>Стенопис</h3>
+      <p class="location">Vasil Levski 25</p>
+      <p class="time">12:00</p>
+      <button onclick="openPopup('../Portal/Images/QR.png')">Виж повече</button>
+    </div>
+
+    <div class="event-card orange">
+      <p class="date">18.07.2024</p>
+      <h3>Отворена студия</h3>
+      <p class="location">Младост 3</p>
+      <p class="time">16:00</p>
+      <button onclick="openPopup('../Portal/Images/QR.png')">Виж повече</button>
+    </div>
+  </div>
+
+  <!-- QR POPUP -->
+  <div id="qr-popup" class="qr-popup hidden">
+    <div class="qr-popup-content">
+      <span class="close-btn" onclick="closePopup()">&times;</span>
+      <img id="qr-image" src="" alt="QR Code">
+    </div>
+  </div>
+</section>
+<!-- Секция: Свържи се с нас -->
+<section class="contact-section">
+  <div class="overlay"></div>
+
+  <h2 class="contact-title">Свържи се с нас</h2>
+
+  <form class="contact-form">
+    <input type="text" placeholder="Име" required>
+    <input type="email" placeholder="Имейл" required>
+    <input type="text" placeholder="Телефон (по избор)">
+    <textarea placeholder="Съобщение" required></textarea>
+    <button type="submit">Изпрати</button>
+  </form>
+
+  <div class="socials">
+    <p>Последвай ни:</p>
+    <div class="icons">
+      <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="footer-overlay"></div>
+  <p>© 2025 StreetFrame. Всички права запазени.</p>
+</footer>
+
+<script>
+  function openPopup(imageSrc) {
+    document.getElementById("qr-image").src = imageSrc;
+    document.getElementById("qr-popup").classList.remove("hidden");
+  }
+
+  function closePopup() {
+    document.getElementById("qr-popup").classList.add("hidden");
+    document.getElementById("qr-image").src = "";
+  }
+</script>
+
+  <script
+  src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js">
+</script>
+<!-- JS за Leaflet картата -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const map = L.map('map', {
+      center: [42.6975, 23.3242],
+      zoom: 13,
+      zoomControl: false,
+      dragging: false,
+      scrollWheelZoom: false,
+      doubleClickZoom: false,
+      boxZoom: false,
+      keyboard: false,
+      touchZoom: false
+    });
+
+    // Модерен стил: CartoDB
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; OpenStreetMap, &copy; CartoDB',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    const locations = [
+      {
+        coords: [42.705, 23.307],
+        title: 'бул. Сливница 230',
+        desc: 'Изоставен склад',
+      },
+      {
+        coords: [42.690, 23.320],
+        title: 'ул. Граф Игнатиев 25',
+        desc: 'Цветна фасада',
+      },
+      {
+        coords: [42.686, 23.319],
+        title: 'Подлез НДК',
+        desc: 'Фестивално пространство',
+      },
+    ];
+
+    locations.forEach((loc) => {
+      L.marker(loc.coords)
+        .addTo(map)
+        .bindPopup(`<strong>${loc.title}</strong><br>${loc.desc}`);
+    });
+  });
+</script>
+
+<script>
+  const cards = document.querySelectorAll('.idea-card');
+  let activeVote = null; // само една активна
+
+  cards.forEach(card => {
+    const voteBtn = card.querySelector('.vote-btn');
+    const voteCount = card.querySelector('.vote-count');
+
+    voteBtn.addEventListener('click', () => {
+      let count = parseInt(voteCount.textContent);
+      const isVoted = voteBtn.classList.contains('voted');
+
+      // Ако вече е гласувал тук – махаме гласа
+      if (isVoted) {
+        voteBtn.classList.remove('voted');
+        voteCount.textContent = count - 1;
+        activeVote = null;
+      } else {
+        // Ако е гласувал другаде – анулираме стария вот
+        if (activeVote) {
+          const prevBtn = activeVote.querySelector('.vote-btn');
+          const prevCount = activeVote.querySelector('.vote-count');
+          prevBtn.classList.remove('voted');
+          prevCount.textContent = parseInt(prevCount.textContent) - 1;
+        }
+
+        // Добавяме гласа тук
+        voteBtn.classList.add('voted');
+        voteCount.textContent = count + 1;
+        activeVote = card;
+      }
+    });
+  });
+</script>
+
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 3;
+
+  function moveSlide(step) {
+    currentSlide = (currentSlide + step + totalSlides) % totalSlides;
+    updateCarousel();
+  }
+
+  function goToSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  function updateCarousel() {
+    const track = document.querySelector('.carousel-track');
+    const offset = currentSlide * 960;
+    track.style.transform = `translateX(-${offset}px)`;
+
+    document.querySelectorAll('.dot').forEach((dot, index) => {
+      dot.classList.toggle('active', index === currentSlide);
+    });
+  }
+
+  // Optional: Reset scroll on load
+  window.onload = () => {
+    window.scrollTo(0, 0);
+    updateCarousel();
+  };
+</script>
+
   <script>
     document.getElementById("scrollArrow").addEventListener("click", function (e) {
       e.preventDefault();
@@ -118,6 +472,5 @@
       window.scrollTo(0, 0);
     };
   </script>
-  
 </body>
 </html>
